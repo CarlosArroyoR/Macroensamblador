@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'aplicacion/css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+
+    <title>Macroensamblador</title>
+</head>
+<body>
+    <nav>
+        <div class="div_logo">
+            <h1 id="logo">Macroensamblador</h1>
+            <h1 id="descripcion">Expansor de Macros en Ensamblador Z80</h1>
+        </div>
+        <div class="sesion">
+            {% if user.is_authenticated %}
+                    <p>{{ user.username }}</p>
+                <a href="{% url 'cerrar_sesion' %}" class="sesiones">Cerrar sesion</a>
+            {% else %}
+                <a href="{% url 'logear' %}" class="sesiones">Login</a>&nbsp;&nbsp; <a href="{% url 'Autenticacion' %}" class="sesiones">Registrate</a>
+            {% endif %}
+        </div>
+
+
+    </nav>
+    <div id="mensajes"> Hola</div>
+    <main>
+        <article id="opciones">
+            <div class="opciones_archivos">
+                <div class="iconos_opciones_archivos new" id="newfile">
+                    <img src="{% static 'aplicacion/img/new.png' %}" alt="">
+                    <p>Nuevo</p>
+                </div>
+                <form class="iconos_opciones_archivos open" id="openfile" enctype="multipart/form-data">
+                    <input type="file" id="archivo_z80" name="archivo_z80" style="display: none;" accept=".asm">
+                    <img src="{% static 'aplicacion/img/open.png' %}" alt="Abrir archivo" id="abrirImagen">
+                    <p>Abrir</p>
+                </form>
+            </div>
+            <div class="seleccion_de_archivos" id="seleccion_de_archivos">
+            </div>
+        </article>
+        <article id="codigo">
+            <div class="opciones_expansion">
+                <h2>Código</h2>
+                <div id="logos_expansion">
+                    <img id="deletefile" src="{% static 'aplicacion/img/delete.png' %}" alt="">
+                    <img id="savefile" src="{% static 'aplicacion/img/save.png' %}" alt="" >
+                    <img id="enviar" src="{% static 'aplicacion/img/enviar.png' %}" alt="">
+                </div>
+            </div>
+            <textarea class="editor" id="editor"></textarea>
+        </article>
+        <article id="codigo_expandido_seccion">
+            <div class="opciones_expansion">
+                <h2>Expansión</h2>
+                <div id="logos_expansion">
+                    <img id="copyToClipboard" src="{% static 'aplicacion/img/copiar.png' %}" alt="">
+                    <img id="downloadFile" src="{% static 'aplicacion/img/descarga.png' %}" alt="">
+                </div>
+            </div>
+                <textarea class="editor" id="editor2"></textarea>
+
+        </article>
+    </main>
+
+    <script>
+        const csrfToken = "{{ csrf_token }}";
+    
+        // Asegúrate de manejar un valor vacío o no válido para `archivos`
+        let archivos = [];
+        try {
+            archivos = JSON.parse('{{ archivos|safe }}');
+        } catch (e) {
+            console.warn("La variable `archivos` está vacía o no es válida.");
+        }    
+    </script>
+    
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="{% static 'aplicacion/js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latager</title>
+    {% comment %} <link rel="icon" href="{% static 'LataApp/img/lata.svg'%}"> {% endcomment %}
+    <link href="{% static 'autenticacion/css/Login.css' %}" rel="stylesheet">
+</head>
+<body>
+    
+    <form action="{% url 'Autenticacion' %}" method="post" class="Formulario_Registrar">
+        {% csrf_token %}
+    
+        <div class="formulario-registro">
+            {{forma|crispy}}
+    
+            <button type="submit" class="boton-registrarse">Registrate</button>
+        </div>   
+    </form>
+    <div class="opcion-regitro">
+        <p>¿Ya tienes cuenta? <a href="{% url 'logear' %}">Inicia Sesion</a></p>
+    </div>
+
+</body>
+</html>

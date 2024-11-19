@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/* Configuracion General */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Josefin Sans', sans-serif;
+}
+body{
+    display: flex;
+    background-color: #F0F2F5;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.Logos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 6em;
+    width: 40%;
+    height: 100vh;
+}
+#Logo-Img{
+    width: 400px;
+    position: relative;
+}
+
+#Logo-Text{
+    color: rgb(0, 0, 0);
+}
+
+
+.Formulario_Inicio{
+    height: 60%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 50px;
+    width: 30vw;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Formulario_Inicio label{
+    font-size: 1.5em;
+    text-align: center;
+}
+.Formulario_Inicio input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+}
+.Formulario_Inicio button{
+    padding: 10px 40px;
+    margin-top: 15px;
+    border: 1px solid;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    outline: none;
+}
+.Formulario_Inicio button:hover{
+    background-color: rgb(255, 138, 115);
+    color: black;
+}
+.Formulario_Inicio .formulario-registro .form-group{
+    padding-bottom: 50px;
+}
+
+.opcion-regitro a{
+    color: rgb(255, 115, 115);
+}
+
+.Formulario_Registrar{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 50px;
+    width: 40vw;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+}
+.Formulario_Registrar h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.Formulario_Registrar input{
+    width: 90%;
+    padding: 5px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 1em;
+    outline: none;
+    border: 2px solid;
+}
+.Formulario_Registrar button{
+    padding: 10px 40px;
+    margin-top: 15px;
+    border: 1px solid;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    outline: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.Formulario_Registrar button:hover{
+    background-color: rgb(255, 138, 115);
+    color: black;
+}
+.Formulario_Registrar label{
+    font-size: 1.9em;
+    text-align: center;
+}
+.form-group{
+    padding-bottom: 20px;
+}
+
+
+.formulario-registro{
+    width: 90%;
+
+}
+#hint_id_username{
+    display: none;
+}
+#hint_id_password1{
+    display: none;
+}
+#hint_id_password2{
+    display: none;
+}
+#error_1_id_password2{
+    background-color: rgb(255, 121, 121);
+}
+
